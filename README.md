@@ -6,7 +6,6 @@ The Documentation Includes
 * How to prepare your application for deployment with stakater
 
 # Stakater Components
-=====================
 
 Stakater is divided into following components:
 
