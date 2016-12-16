@@ -26,9 +26,14 @@ ADD . /app/
 ```
 ###Anatomy of Dockerfile_build
 `FROM` states the base image to be used when creating the container. In the sample above it’s `ahmadiq/grails:2.2.4` since this sample Dockerfile_build is for a grails application.
+
 `MAINTAINER` (optional) states the value of author field in the generated image. In the sample above it’s Stakater Team.
+
 `VOLUME` instruction creates a mount point with name specified in the instruction. In the sample above /app is the mount point.
-`ADD` instruction copies files and adds them to the filesystem of the container. In the sample above, the present working directory (denoted by ‘.’) consisting of all the files in the root directory of application are copied to /app in the container. Since the Dockerfile_build is in the root directory, a ’.’ (present working directory) in the Dockerfile would point to the root directory of the application. 
+
+`ADD` instruction copies files and adds them to the filesystem of the container. In the sample above, the present working directory (denoted by ‘.’) consisting of all the files in the root directory of application are copied to /app in the container. 
+
+Since the Dockerfile_build is in the root directory, a ’.’ (present working directory) in the Dockerfile would point to the root directory of the application. 
 
 
 ###Restrictions for Dockerfile_build
@@ -97,13 +102,16 @@ Map the directories where application dependencies are downloaded to an external
 
 ###Restrictions for docker-compose files
 There should be three services in the docker-compose, compile, test and app as shown in the sample above.
+
 Package command in app service should specify the output path as `/app/<APP_NAME>/outputs/<PACKAGE_FILE_NAME>`
+
 The outputs directory for the package command should be mapped to `/app/<APP_NAME>` like
 ```
 volumes:
   - /app/test_app:/app/test_app/outputs/
 ```
 in the sample above.
+
 Dockerfile in each service should have the name of the Dockerfile_build in application root directory. If the name for `Dockerfile_build` is changed, change it here in docker-compose files as well.
 
 
