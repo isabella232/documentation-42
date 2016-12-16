@@ -117,7 +117,7 @@ Dockerfile in each service should have the name of the Dockerfile_build in appli
 
 ##Helping Materials:
 To learn more about Docker: 
-https://docs.docker.com/
-https://docs.docker.com/engine/reference/builder/
-https://docs.docker.com/compose/reference/
+* https://docs.docker.com/
+* https://docs.docker.com/engine/reference/builder/
+* https://docs.docker.com/compose/reference/
 
