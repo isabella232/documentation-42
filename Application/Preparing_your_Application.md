@@ -77,7 +77,7 @@ app:
   build: .
   dockerfile: Dockerfile_build
   volumes:
-    - /app/test_app:/app/test_app/outputs/
+    - /app/test_app_prod:/app/test_app/outputs/
     - /app/.grails:/root/.grails
   command: grails prod war /app/test_app/outputs/test.war
 ```
@@ -105,12 +105,13 @@ There should be three services in the docker-compose, compile, test and app as s
 
 Package command in app service should specify the output path as `/app/<APP_NAME>/outputs/<PACKAGE_FILE_NAME>`
 
-The outputs directory for the package command should be mapped to `/app/<APP_NAME>` like
+The outputs directory for the package command should be mapped to `/app/<APP_NAME>_<ENVIRONMENT>` like
 ```
 volumes:
-  - /app/test_app:/app/test_app/outputs/
+  - /app/test_app_prod:/app/test_app/outputs/
 ```
 in the sample above.
+The environment name should be the same as the environment passed in build.
 
 Dockerfile in each service should have the name of the Dockerfile_build in application root directory. If the name for `Dockerfile_build` is changed, change it here in docker-compose files as well.
 
