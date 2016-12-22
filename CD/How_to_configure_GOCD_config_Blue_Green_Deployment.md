@@ -227,8 +227,8 @@ Using the AMI created  in the second stage, this pipelines deploys the applicati
           <param name="APP_NAME"></param>
           <param name="ENVIRONMENT"></param>
           <param name="APP_DOCKER_IMAGE"></param>
-          <param name="ENABLE_SSL"></param>
-          <param name="INTERNAL_SUPPORT"></param>
+          <param name="SSL_CERTIFICATE_ARN"></param>
+          <param name="IS_ELB_INTERNAL"></param>
           <param name="INSTANCE_TYPE"></param>
           <param name="ENV_TF_STATE_KEY"></param>
         </params>
@@ -270,22 +270,22 @@ OR
 &lt;param name="APP_DOCKER_IMAGE">registry.stakater-reference.local:80/app_prod&lt;/param&gt;</td>
   </tr>
   <tr>
-    <td>ENABLE_SSL</td>
-    <td>If true, Enables SSL on Load Balancer
+    <td>SSL_CERTIFICATE_ARN</td>
+    <td>If provided, Enables SSL on Load Balancer
 
  <br/><br/>Example:
-&lt;param name="ENABLE_SSL"&gt;true&lt;/param&gt;
+&lt;param name="SSL_CERTIFICATE_ARN"&gt;&lt;your_arn&gt;&lt;/param&gt;
 OR
-&lt;param name="ENABLE_SSL"&gt;false&lt;/param&gt;</td>
+&lt;param name="SSL_CERTIFICATE_ARN"&gt;&lt;/param&gt;</td>
   </tr>
   <tr>
-    <td>INTERNAL_SUPPORT</td>
+    <td>IS_ELB_INTERNAL</td>
     <td>If true, The ELB is created as Internal and is not assigned a public ip.
 
  <br/><br/>Example:
-&lt;param name="INTERNAL_SUPPORT">true&lt;/param&gt;
+&lt;param name="IS_ELB_INTERNAL">true&lt;/param&gt;
 OR
-&lt;param name="INTERNAL_SUPPORT">false&lt;/param&gt;</td>
+&lt;param name="IS_ELB_INTERNAL">false&lt;/param&gt;</td>
   </tr>
   <tr>
     <td>INSTANCE_TYPE</td>
