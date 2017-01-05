@@ -217,6 +217,71 @@ Change the pipeline name to your build application pipeline name. StageName woul
 
 *NOTE: Use "stakater_build_ami" template in create AMI pipeline.*
 
+###Delete AMI Pipeline:
+This pipeline deletes all `Amazon Machine Image(AMI)` except three.
+<ul>
+        <li> The most recently created AMI. </li>
+        <li> The AMI deployed on Blue group instance. </li>
+        <li> The AMI deployed on Green group instance.</li>
+</ul>
+
+The pipeline is triggered automatically as well when the create pipeline completes successfully  and fails if there is an error in AMI deletion.
+```
+      <pipeline name="app-delete-ami-prod" template="stakater_delete_ami">
+        <params>
+          <param name="SOURCE_DIR" />
+          <param name="APP_NAME"></param>
+          <param name="ENVIRONMENT">live</param>
+        </params>
+        <materials>
+          <pipeline pipelineName="app-create-ami-prod" stageName="Build-AMI" />
+        </materials>
+      </pipeline>
+```
+*Excerpt 3: XML for delete AMI  pipeline*
+
+**![Figure 3: Delete AMI pipeline highlighted in red](figures/figure4.png)**
+
+<table>
+  <tr>
+    <td>Parameter Name</td>
+    <td>Description</td>
+  </tr>
+  <tr>
+    <td>APP_NAME</td>
+    <td>Name of the application to be deployed.
+
+NOTE: The name for one application should be the same in all the pipelines and should only contain alphabets, numbers and special characters "-" “_” .
+
+<br/><br/>Example:
+&lt;param name="APP_NAME"&gt;test_app&lt;/param&gt;</td>
+  </tr>
+  <tr>
+    <td>ENVIRONMENT</td>
+    <td>Name of the environment for which the blue-green deployment infrastructure will be created.
+
+<br/><br/>Example:
+&lt;param name="ENVIRONMENT"&gt;prod&lt;/param&gt;
+OR
+&lt;param name="ENVIRONMENT"&gt;stage&lt;/param&gt;</td>
+  </tr>
+</table>
+
+
+*Table 2: Description of delete AMI pipeline parameters*
+
+To setup the pipeline, fill in the values for the required parameters and setup the material (source of pipeline changes). This pipeline expects the create image pipeline as its source.
+
+Example:
+```
+<materials>
+        <pipeline pipelineName="app-create-ami-prod" stageName="Build-AMI" />
+</materials>
+```
+Change the pipeline name to your build application pipeline name. StageName would remain the same.
+
+*NOTE: Use "stakater_delete_ami" template in delete AMI pipeline.*
+
 ### Deploy to Production Pipeline:
 
 Using the AMI created  in the second stage, this pipelines deploys the application. It need to be triggered manually and  deploys application using the technique of blue green deployment.
@@ -233,11 +298,11 @@ Using the AMI created  in the second stage, this pipelines deploys the applicati
           <param name="ENV_TF_STATE_KEY"></param>
         </params>
         <materials>
-          <pipeline pipelineName="app-create-ami-prod" stageName="Build-AMI" />
+          <pipeline pipelineName="app-delete-ami-prod" stageName="Delete-AMI" />
         </materials>
       </pipeline>
 ```
-**![Figure 4: Switch Group Pipeline (highlighted in red)](figures/figure4.png)**
+**![Figure 5: Deploy To Production Pipeline (highlighted in red)](figures/figure5.png)**
 
 <table>
   <tr>
@@ -317,12 +382,12 @@ To setup the pipeline, fill in the values of the required parameters and setup t
 Example:
 ```
 <materials>
-        <pipeline pipelineName="app-create-ami-prod" stageName="Build-AMI" />
+        <pipeline pipelineName="app-delete-ami-prod" stageName="Delete-AMI" />
 </materials>
 ```
-Change the pipeline name to your create AMI pipeline name. StageName would remain the same.
+Change the pipeline name to your delete AMI pipeline name. StageName would remain the same.
 
-*NOTE: Use "stakater_launch_ami" template in create AMI pipeline.*
+*NOTE: Use "stakater_launch_ami" template in delete AMI pipeline.*
 
 ###Switch Group Pipeline:
 
@@ -342,7 +407,7 @@ This Pipeline is related to a stage in Blue Green Deployment and needs to be tri
 ```
 *Excerpt 4:XML for switch group  pipeline*
 
-**![Figure 5: Switch Group Pipeline (highlighted in red)](figures/figure5.png)**
+**![Figure 5: Switch Group Pipeline (highlighted in red)](figures/figure6.png)**
 
 <table>
   <tr>
@@ -401,7 +466,7 @@ This Pipeline is related to a stage in Blue Green Deployment and needs to be tri
 ```
 *Excerpt 5:XML for rollback deployment  pipeline*
 
-**![Figure 6: Rollback Deployment Pipeline (highlighted in red)](figures/figure6.png)**
+**![Figure 6: Rollback Deployment Pipeline (highlighted in red)](figures/figure7.png)**
 
 <table>
   <tr>
@@ -451,9 +516,9 @@ The development and test pipeline groups each consists of the following two pipe
 
 2. Deploy to cluster
 
-**![Figure 7: Layout of the development pipeline group](figures/figure7.png)**
+**![Figure 7: Layout of the development pipeline group](figures/figure8.png)**
 
-**![Figure 8: Layout of the test/qa pipeline group](figures/figure8.png)**
+**![Figure 8: Layout of the test/qa pipeline group](figures/figure9.png)**
 
 ### Build Application Pipeline:
 
