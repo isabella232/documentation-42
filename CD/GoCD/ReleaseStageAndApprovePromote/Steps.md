@@ -19,22 +19,22 @@ Although it really is a simplification, it tries to convey visually 2 very impor
 * by default it should be snapshot e.g. 1.1.0-SNAPSHOT;
 * identify & set the build number? so, e.g. it will become 1.1.0-21
 
-### Build Stage
+### 1 - Build Stage
 
 * Set new version
 * Build (including test)
 * Build docker image & publish to docker registry
 
-### Deploy-to-Test-Env Stage
+### 2 - Deploy-to-Test-Env Stage
 
-### Deploy-to-Stage-Env Stage
+### 3 - Deploy-to-Stage-Env Stage
 
-### Publish Stage
+### 4 - Publish Stage
 
 * Create release branch in git
 * Create tag in git
 
 Approve?
 
-### Promote-to-Prod-Env Stage
+### 5 - Promote-to-Prod-Env Stage
 
