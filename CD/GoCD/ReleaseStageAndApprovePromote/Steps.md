@@ -1,5 +1,7 @@
 ## GoCD Abstractions
 
+(This is just to understand the internals of GoCD; nothing to do with our stages)
+
 **![Figure 1: GoCD Abstractions](figures/GoCD-abstractions.png)**
 
 Although it really is a simplification, it tries to convey visually 2 very important and often misunderstood/ignored characteristics of GoCD:
