@@ -10,10 +10,10 @@ Although it really is a simplification, it tries to convey visually 2 very impor
 
 2. the fact that some are executed in parallel (depending on agents availability) while others sequentially:
 
-⋅⋅* Multiple Pipelines run in parallel
-⋅⋅* Multiple Stages within a Pipeline run sequentially
-⋅⋅* Multiple Jobs within a Stage run in parallel
-⋅⋅* Multiple Tasks within a Job run sequentially
+  * Multiple Pipelines run in parallel
+  * Multiple Stages within a Pipeline run sequentially
+  * Multiple Jobs within a Stage run in parallel
+  * Multiple Tasks within a Job run sequentially
 
 ## Pipeline Stages
 
