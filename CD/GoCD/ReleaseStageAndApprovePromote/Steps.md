@@ -17,6 +17,7 @@ Although it really is a simplification, it tries to convey visually 2 very impor
 
 ## Pipeline Stages
 
+[Pipelines as code](https://docs.gocd.io/current/advanced_usage/pipelines_as_code.html)
 
 ### 1 - Build Stage
 
