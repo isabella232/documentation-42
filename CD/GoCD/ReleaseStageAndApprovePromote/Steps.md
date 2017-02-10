@@ -20,9 +20,9 @@ Although it really is a simplification, it tries to convey visually 2 very impor
 
 ### 1 - Build Stage
 
-by default it should be snapshot e.g. 1.1.0-SNAPSHOT;
-identify & set the build number? so, e.g. it will become 1.1.0-21
-ensure that build numbers are same for docker image, git branch, git tag, etc.
+  * by default it should be snapshot e.g. 1.1.0-SNAPSHOT;
+  * identify & set the build number? so, e.g. it will become 1.1.0-21
+  * ensure that build numbers are same for docker image, git branch, git tag, etc.
 
 * Set new version
 * Build (including test)
