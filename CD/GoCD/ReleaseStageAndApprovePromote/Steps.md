@@ -14,26 +14,25 @@ Although it really is a simplification, it tries to convey visually 2 very impor
 
 ## Pipeline Stages
 
-### Handling Versions:
 * by default it should be snapshot e.g. 1.1.0-SNAPSHOT;
 * identify & set the build number? so, e.g. it will become 1.1.0-21
 
-* Build Stage
+### Build Stage
 
-** Set new version
-** Build (including test)
-** Build docker image & publish to docker registry
+* Set new version
+* Build (including test)
+* Build docker image & publish to docker registry
 
-* Deploy-to-Test-Env Stage
+### Deploy-to-Test-Env Stage
 
-* Deploy-to-Stage-Env Stage
+### Deploy-to-Stage-Env Stage
 
-* Publish Stage
+### Publish Stage
 
-** Create release branch in git
-** Create tag in git
+* Create release branch in git
+* Create tag in git
 
 Approve?
 
-* Promote-to-Prod-Env Stage
+### Promote-to-Prod-Env Stage
 
