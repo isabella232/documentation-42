@@ -3,12 +3,14 @@
 This stack is optimized for cost. And this is one stack to run all different sort of enviroments (dev, stage, prod, etc.)
 
 1. Service Discovery | 24x7 |  Node? (what should be its name?)
+
    Type Nano
    
-   Consul
-   Housekeeper
+   * Consul
+   * Housekeeper
 
    Why?
+
    This needs to be up and running always as other apps need it for discovery. Running 24x7
 
 2. Tools Node
