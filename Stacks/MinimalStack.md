@@ -2,7 +2,7 @@
 
 This stack is optimized for cost. And this is one stack to run all different sort of enviroments (dev, stage, prod, etc.)
 
-1. Service Discovery | 24x7 |  Node? (what should be its name?)
+1. Service Discovery | 24x7 | SDH | Node? (what should be its name?)
    
    * Consul
    * Housekeeper
@@ -81,3 +81,27 @@ This stack is optimized for cost. And this is one stack to run all different sor
 ---
 
 ## Approximate Cost per Month
+
+### Running Always
+
+| Node          | Runtime       | Cost  |
+| ------------- |:-------------:| -----:|
+| SDH           | always        |    $0 |
+| Tools         | always        |    $0 |
+| Monitoring    | always        |    $0 |
+| DEV           | always        |    $0 |
+| Stage         | always        |    $0 |
+| Prod          | always        |    $0 |
+
+### Not Running Always
+
+
+| Node          | Runtime       | Cost  |
+| ------------- |:-------------:| -----:|
+| SDH           | always        |    $0 |
+| Tools         | always        |    $0 |
+| Monitoring    | always        |    $0 |
+| DEV           | always        |    $0 |
+| Stage         | always        |    $0 |
+| Prod          | always        |    $0 |
+
