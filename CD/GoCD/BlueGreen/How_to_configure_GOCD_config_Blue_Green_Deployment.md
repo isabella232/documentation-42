@@ -389,7 +389,7 @@ Change the pipeline name to your delete AMI pipeline name. StageName would remai
 
 *NOTE: Use "stakater_launch_ami" template in delete AMI pipeline.*
 
-###Switch Group Pipeline:
+### Switch Group Pipeline:
 
 This Pipeline is related to a stage in Blue Green Deployment and needs to be triggered manually. When triggered, this pipeline switches the test and live groups.
 
