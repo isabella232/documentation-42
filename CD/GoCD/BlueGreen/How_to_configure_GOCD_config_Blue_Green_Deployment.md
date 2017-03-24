@@ -8,11 +8,11 @@ More: https://docs.go.cd/16.5.0/configuration/configuration_reference.html
 
 ## Where is cruise-config.xml?
 
-###Before Creating your Infrastructure:
+### Before Creating your Infrastructure:
 1. Navigate to `infrastructure-modules/global-admiral/data/gocd/conf`
 2. Open `cruise-config.xml`
 
-###After your GoCD is up and running:
+### After your GoCD is up and running:
 1. Open the GoCD pipelines view
 2. Click on `Admin` from the top menu
 3. Select `Config XML` to open the `cruise-config.xml`
