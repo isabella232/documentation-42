@@ -96,7 +96,7 @@ Example:
 
 *NOTE: Use `stakater_build` template in build application pipeline.*
 
-###Create AMI Pipeline:
+### Create AMI Pipeline:
 This pipeline creates the `Amazon Machine Image(AMI)` that is used in deployment. The pipeline is triggered automatically as well when the build pipeline completes successfully  and fails if there is an error in AMI creation.
 ```
       <pipeline name="app-create-ami-prod" template="stakater_build_ami">
@@ -217,7 +217,7 @@ Change the pipeline name to your build application pipeline name. StageName woul
 
 *NOTE: Use "stakater_build_ami" template in create AMI pipeline.*
 
-###Delete AMI Pipeline:
+### Delete AMI Pipeline:
 This pipeline deletes all `Amazon Machine Image(AMI)` except three.
 <ul>
         <li> The most recently created AMI. </li>
