@@ -38,3 +38,30 @@
 	5. Tag release (repo)
 4. Deploy
 	1. Dev/Test or Prod 
+
+Generic Steps:
+=============
+
+The first build stage will use the language specific build systems e.g. maven, gradle etc. for Java, webpack, gulp, etc. for JavaScript etc.
+
+The idea is that the first stage will be language dependent only; and rest of the stages will be common; as they will work on docker image only.
+
+1. Build [ CIT - Continous Integration & Testing ] Stage 
+    1. Compile Code
+    2. Run Tests (e.g. unit, etc.)
+    3. Static Code Analysis & Test Coverage (e.g. sonarqube etc.)
+    4. Generate Versioned Package (e.g. jar, war, etc.)
+    5. Push Package to Artifact Repository (e.g. nexus, etc.)
+    6. Create Docker Image
+    7(Optional). Run Integrations Tests
+    8. Push Docker Image to Docker Image Repository
+2. Deploy to Dev Environment
+3. Deploy to Test Environment
+    1. Run different sort of tests? performance, load, etc.
+4. Publish
+    1. Create Release Branch
+    2. Create Tag
+=> Approve    
+5. Deploy to Stage Environment
+=> Approve?
+6. Deploy to Production
