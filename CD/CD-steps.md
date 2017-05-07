@@ -46,7 +46,7 @@ The first build stage will use the language specific build systems e.g. maven, g
 
 The idea is that the first stage will be language dependent only; and rest of the stages will be common; as they will work on docker image only.
 
-1. Build [ CIT - Continous Integration & Testing ] Stage 
+1. Build [ CIT - Continous Integration & Testing ] 
     1. Compile Code
     2. Run Tests (e.g. unit, etc.)
     3. Static Code Analysis & Test Coverage (e.g. sonarqube etc.)
@@ -61,7 +61,11 @@ The idea is that the first stage will be language dependent only; and rest of th
 4. Publish
     1. Create Release Branch
     2. Create Tag
+
 => Approve    
+
 5. Deploy to Stage Environment
+
 => Approve?
+
 6. Deploy to Production
